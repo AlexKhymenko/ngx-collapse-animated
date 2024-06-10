@@ -8,5 +8,10 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
+  "exports": {
+    ".": {
+      "css": "./styles/collapse-animated.css"
+    }
+  },
   "sideEffects": false
 }

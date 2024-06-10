@@ -21,7 +21,7 @@ import {
 	selector: '[ngxCollapseAnimated]',
 	standalone: true,
 })
-export class LibCollapseAnimatedDirective implements OnChanges, OnInit {
+export class NgxCollapseAnimatedDirective implements OnChanges, OnInit {
 	private static readonly SHOW_STYLE = 'show';
 	private static readonly COLLAPSING = 'collapsing';
 
@@ -42,7 +42,7 @@ export class LibCollapseAnimatedDirective implements OnChanges, OnInit {
 
 	ngOnInit(): void {
 		if (!this.collapsed) {
-			this.getClassList().add(LibCollapseAnimatedDirective.SHOW_STYLE);
+			this.getClassList().add(NgxCollapseAnimatedDirective.SHOW_STYLE);
 		}
 	}
 
@@ -84,9 +84,9 @@ export class LibCollapseAnimatedDirective implements OnChanges, OnInit {
 
 	private effectDone() {
 		if (this.collapsed) {
-			this.getClassList().remove(LibCollapseAnimatedDirective.SHOW_STYLE);
+			this.getClassList().remove(NgxCollapseAnimatedDirective.SHOW_STYLE);
 		}
-		this.getClassList().remove(LibCollapseAnimatedDirective.COLLAPSING);
+		this.getClassList().remove(NgxCollapseAnimatedDirective.COLLAPSING);
 		if (this.currentEffect) {
 			this.currentEffect.reset();
 			this.currentEffect = null;
@@ -114,7 +114,7 @@ export class LibCollapseAnimatedDirective implements OnChanges, OnInit {
 	}
 
 	private startOpening(): void {
-		this.getClassList().add(LibCollapseAnimatedDirective.SHOW_STYLE);
+		this.getClassList().add(NgxCollapseAnimatedDirective.SHOW_STYLE);
 		const effect = this.openEffect;
 		this.playEffect(effect);
 	}
@@ -135,7 +135,7 @@ export class LibCollapseAnimatedDirective implements OnChanges, OnInit {
 
 	private playEffect(effect: AnimationPlayer) {
 		if (!this.currentEffect) {
-			this.getClassList().add(LibCollapseAnimatedDirective.COLLAPSING);
+			this.getClassList().add(NgxCollapseAnimatedDirective.COLLAPSING);
 			this.currentEffect = effect;
 			this.currentEffect.play();
 		}
