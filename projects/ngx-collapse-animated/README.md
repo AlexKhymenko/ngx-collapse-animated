@@ -2,6 +2,7 @@
 
 Bootstrap-like collapse for Angular
 
+Try it https://stackblitz.com/~/github.com/AlexKhymenko/ngx-collapse-animated
 
 ## Installation
 
