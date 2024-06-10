@@ -1,6 +1,6 @@
 {
   "name": "ngx-collapse-animated",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "peerDependencies": {
     "@angular/common": ">=17 || >30",
     "@angular/core": ">=17 || >30",
