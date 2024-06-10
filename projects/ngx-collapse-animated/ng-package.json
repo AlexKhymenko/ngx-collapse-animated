@@ -3,5 +3,8 @@
   "dest": "../../dist/ngx-collapse-animated",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": [
+    { "input": "src/lib/style", "glob": "**/*.css", "output": "styles" }
+  ]
 }
