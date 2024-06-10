@@ -1,24 +1,60 @@
-# NgxCollapseAnimated
+# NgxCollapse
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
+Bootstrap-like collapse for Angular
 
-## Code scaffolding
 
-Run `ng generate component component-name --project ngx-collapse-animated` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-collapse-animated`.
-> Note: Don't forget to add `--project ngx-collapse-animated` or else it will be added to the default project in your `angular.json` file. 
+## Installation
 
-## Build
+- Simply run `npm i ngx-collapse-animated`.
+- Add animation provider to your project
+  `providers: [provideAnimations(),
+  provideZoneChangeDetection({ eventCoalescing: true }),
+  provideRouter(routes)]`
 
-Run `ng build ngx-collapse-animated` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Add the following in styles.scss of your application
+````
+.collapse:not(.show) {
+  display: none;
+}
 
-## Publishing
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+````
 
-After building your library with `ng build ngx-collapse-animated`, go to the dist folder `cd dist/ngx-collapse-animated` and run `npm publish`.
+or import scss file
+`````
+  @use 'ngx-collapse-animated';
+`````
+if You are using bootstrap no need to add styles
 
-## Running unit tests
+## Usage
+Add ngxCollapseAnimated directive to where the content should be visible
+`````
+  <main class="container">
+  <div class="item">
+    <button (click)="visible = !visible">Show animation</button>
+    <div [ngxCollapseAnimated]="visible">
+      Hello to You!
+    </div>
+  </div>
+</main>
+`````
 
-Run `ng test ngx-collapse-animated` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Import in Your component
+````` 
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, NgxCollapseAnimatedDirective],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'collapse-animated';
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+  visible = true;
+}
+`````

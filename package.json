@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build-lib": "ng build ngx-collapse-animated",
+    "pub": "npm run build-lib && cd dist/ngx-collapse-animated && npm publish"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +20,7 @@
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
+    "ngx-collapse-animated": "^0.0.4",
     "prettier": "^3.3.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

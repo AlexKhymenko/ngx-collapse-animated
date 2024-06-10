@@ -1,6 +1,6 @@
 {
   "name": "ngx-collapse-animated",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "peerDependencies": {
     "@angular/common": "^18.0.0",
     "@angular/core": "^18.0.0"
@@ -10,8 +10,7 @@
   },
   "exports": {
     ".": {
-      "css": "./styles/collapse-animated.css",
-      "scss": "./styles/collapse-animated.scss"
+      "sass": "./styles/_index.scss"
     }
   },
   "sideEffects": false
