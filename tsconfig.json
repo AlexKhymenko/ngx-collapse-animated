@@ -10,6 +10,11 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
+    "paths": {
+      "ngx-collapse-animated": [
+        "./dist/ngx-collapse-animated"
+      ]
+    },
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
