@@ -2,16 +2,17 @@
 
 Bootstrap-like collapse for Angular
 
+Try it https://stackblitz.com/~/github.com/AlexKhymenko/ngx-collapse-animated
 
 ## Installation
 
 - Simply run `npm i ngx-collapse-animated`.
 - Add animation provider to your project
   `providers: [provideAnimations(),
-   provideZoneChangeDetection({ eventCoalescing: true }),
+  provideZoneChangeDetection({ eventCoalescing: true }),
   provideRouter(routes)]`
 
-- Add the following in styles.scss
+- Add the following in styles.scss of your application
 ````
 .collapse:not(.show) {
   display: none;
@@ -26,7 +27,7 @@ Bootstrap-like collapse for Angular
 
 or import scss file
 `````
- @use 'ngx-collapse-animated';
+  @use 'ngx-collapse-animated';
 `````
 if You are using bootstrap no need to add styles
 
@@ -43,7 +44,7 @@ Add ngxCollapseAnimated directive to where the content should be visible
 </main>
 `````
 
-Import in Your component
+Import  NgxCollapseAnimatedDirective in Your component
 ````` 
 @Component({
   selector: 'app-root',
