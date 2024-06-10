@@ -10,7 +10,8 @@
   },
   "exports": {
     ".": {
-      "css": "./styles/collapse-animated.css"
+      "css": "./styles/collapse-animated.css",
+      "scss": "./styles/collapse-animated.scss"
     }
   },
   "sideEffects": false
