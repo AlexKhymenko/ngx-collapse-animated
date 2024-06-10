@@ -43,7 +43,7 @@ Add ngxCollapseAnimated directive to where the content should be visible
 </main>
 `````
 
-Import in Your component
+Import  NgxCollapseAnimatedDirective in Your component
 ````` 
 @Component({
   selector: 'app-root',
