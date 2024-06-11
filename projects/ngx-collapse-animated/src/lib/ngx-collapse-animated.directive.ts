@@ -44,6 +44,7 @@ export class NgxCollapseAnimatedDirective implements OnChanges, OnInit {
     const nativeElement = this.el.nativeElement as HTMLElement;
     return nativeElement.classList;
   }
+
   ngOnInit(): void {
     if (!this.collapsed) {
       this.getClassList.add(NgxCollapseAnimatedDirective.SHOW_STYLE);
@@ -68,6 +69,7 @@ export class NgxCollapseAnimatedDirective implements OnChanges, OnInit {
     }
   }
 
+  //////////////////////////////////////// PRIVATE METHODS ////////////////////////////////////////////////////////////
   private get openEffect(): AnimationPlayer {
     if (!this._openEffect) {
       this._openEffect = this.builder
