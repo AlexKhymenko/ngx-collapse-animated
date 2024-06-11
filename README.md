@@ -33,7 +33,6 @@ or import scss file
 `````
   @use 'ngx-collapse-animated';
 `````
-if You are using bootstrap no need to add styles
 
 ## Usage
 Add ngxCollapseAnimated directive to where the content should be visible
