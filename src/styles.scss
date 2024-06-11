@@ -1,3 +1,11 @@
 /* You can add global styles to this file, and also import other styles files */
 
-@use 'ngx-collapse-animated';
+.collapse:not(.show) {
+  display: none;
+}
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}

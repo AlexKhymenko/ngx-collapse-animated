@@ -91,14 +91,14 @@ export class NgxCollapseAnimatedDirective implements OnChanges, OnInit {
     if (changes['collapsed']) {
       const value = changes['collapsed'];
       if (
-        value.previousValue === true ||
-        (value.previousValue === undefined && value.currentValue === false)
+        (value.previousValue === true || value.previousValue === undefined) &&
+        value.currentValue === false
       ) {
         this.startOpening();
       }
       if (
-        value.previousValue === false ||
-        (value.previousValue === undefined && value.currentValue === true)
+        (value.previousValue === false || value.previousValue === undefined) &&
+        value.currentValue === true
       ) {
         this.startClosing();
       }
