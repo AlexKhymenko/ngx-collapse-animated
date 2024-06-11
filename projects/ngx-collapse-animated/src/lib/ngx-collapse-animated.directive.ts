@@ -40,9 +40,31 @@ export class NgxCollapseAnimatedDirective implements OnChanges, OnInit {
   private _closeEffect!: AnimationPlayer | null;
   private _openEffect!: AnimationPlayer | null;
 
+  private get getClassList() {
+    const nativeElement = this.el.nativeElement as HTMLElement;
+    return nativeElement.classList;
+  }
   ngOnInit(): void {
     if (!this.collapsed) {
-      this.getClassList().add(NgxCollapseAnimatedDirective.SHOW_STYLE);
+      this.getClassList.add(NgxCollapseAnimatedDirective.SHOW_STYLE);
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['collapsed']) {
+      const value = changes['collapsed'];
+      if (
+        (value.previousValue === true || value.previousValue === undefined) &&
+        value.currentValue === false
+      ) {
+        this.startOpening();
+      }
+      if (
+        (value.previousValue === false || value.previousValue === undefined) &&
+        value.currentValue === true
+      ) {
+        this.startClosing();
+      }
     }
   }
 
@@ -78,42 +100,19 @@ export class NgxCollapseAnimatedDirective implements OnChanges, OnInit {
 
   private effectDone() {
     if (this.collapsed) {
-      this.getClassList().remove(NgxCollapseAnimatedDirective.SHOW_STYLE);
+      this.getClassList.remove(NgxCollapseAnimatedDirective.SHOW_STYLE);
     }
-    this.getClassList().remove(NgxCollapseAnimatedDirective.COLLAPSING);
+    this.getClassList.remove(NgxCollapseAnimatedDirective.COLLAPSING);
     if (this.currentEffect) {
       this.currentEffect.reset();
       this.currentEffect = null;
     }
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['collapsed']) {
-      const value = changes['collapsed'];
-      if (
-        (value.previousValue === true || value.previousValue === undefined) &&
-        value.currentValue === false
-      ) {
-        this.startOpening();
-      }
-      if (
-        (value.previousValue === false || value.previousValue === undefined) &&
-        value.currentValue === true
-      ) {
-        this.startClosing();
-      }
-    }
-  }
-
   private startOpening(): void {
-    this.getClassList().add(NgxCollapseAnimatedDirective.SHOW_STYLE);
+    this.getClassList.add(NgxCollapseAnimatedDirective.SHOW_STYLE);
     const effect = this.openEffect;
     this.playEffect(effect);
-  }
-
-  private getClassList() {
-    const nativeElement = this.el.nativeElement as HTMLElement;
-    return nativeElement.classList;
   }
 
   private startClosing(): void {
@@ -127,7 +126,7 @@ export class NgxCollapseAnimatedDirective implements OnChanges, OnInit {
 
   private playEffect(effect: AnimationPlayer) {
     if (!this.currentEffect) {
-      this.getClassList().add(NgxCollapseAnimatedDirective.COLLAPSING);
+      this.getClassList.add(NgxCollapseAnimatedDirective.COLLAPSING);
       this.currentEffect = effect;
       this.currentEffect.play();
     }
