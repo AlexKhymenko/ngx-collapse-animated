@@ -1,11 +1,5 @@
-/*div {*/
-/*  border: solid 3px;*/
-/*  padding: 1em;*/
-/*  max-width: 75%;*/
-/*}*/
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
